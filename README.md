@@ -1,4 +1,13 @@
-# Minimal Example - Behavior as a Code suite
+<p align="center">
+  <img src="./blueprint.gif" height="240" />
+  <h3 align="center">Blueprint: Behavior as a Code Suite</h3>
+  <p align="center"><strong>A minimal quality assessment using Behavior as a Code with https://assay.it</strong></p>
+
+  <p align="center">
+  </p>
+</p>
+
+--- 
 
 Learn about quality assessments of Serverless applications with https://assay.it. This example implements a minimal quality assessment suite using Behavior as a Code.
 
@@ -15,7 +24,7 @@ Quality assurance of serverless applications is more complex than doing it for o
 
 1. **Sign up for [assay.it](https://assay.it)** with your GitHub developer account. Initially, the service requires only access to your public profile, public repositories and access to commit status of connected repositories. Later, you can enable quality assessments of private repositories. 
 
-2. **Fork [assay-it/sample.assay.it](https://github.com/assay-it/sample.assay.it)** to your own GitHub account and then add to the assay.it workspace. The example implements a minimal quality assessment suite using [category pattern](https://assay.it/doc/core/category) to connect cause-and-effect (Given/When/Then) with the networking concepts (Input/Process/Output). Just write [pure functional code](https://assay.it/doc/core) instead of clicking through UI or maintaining endless XML, YAML or JSON documents.
+2. **Fork [assay-it/blueprint-suite](https://github.com/assay-it/blueprint-suite)** to your own GitHub account and then add to the assay.it workspace. The example implements a minimal quality assessment suite using [category pattern](https://assay.it/doc/core/category) to connect cause-and-effect (Given/When/Then) with the networking concepts (Input/Process/Output). Just write [pure functional code](https://assay.it/doc/core) instead of clicking through UI or maintaining endless XML, YAML or JSON documents.
 ```go
 func TestOk() assay.Arrow {
   return http.Join(
