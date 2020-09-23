@@ -9,10 +9,6 @@
 
 --- 
 
-Learn about quality assessments of Serverless applications with https://assay.it. This example implements a minimal quality assessment suite using Behavior as a Code.
-
-
-## Inspiration
 
 Quality assurance of serverless applications is more complex than doing it for other runtimes. Engineering teams spend twice as much time maintaining testing environments and mocks of cloud dependencies instead of building a loyal relationship with their customers, assay.it has you covered.
 
