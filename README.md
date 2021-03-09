@@ -1,44 +1,52 @@
-# Simple Suite Sample
+<p align="center">
+  <img src="./blueprint.gif" height="240" />
+  <h3 align="center">Blueprint: Behavior as a Code Suite</h3>
+  <p align="center"><strong>A minimal quality assessment using Behavior as a Code with https://assay.it</strong></p>
 
-Here is an example application to show https://assay.it in actions.
+  <p align="center">
+  </p>
+</p>
+
+--- 
 
 
-## Inspiration
+Quality assurance of serverless applications is more complex than doing it for other runtimes. Engineering teams spend twice as much time maintaining testing environments and mocks of cloud dependencies instead of building a loyal relationship with their customers, assay.it has you covered.
 
-Microservices have become a design style to evolve systems architecture in parallel,
-implement stable and consistent interfaces. This architecture style brings additional
-complexity and new problems. One of them is the assessment of system behavior while its
-components communicate over the network - like integration testing but for distributed
-environment. We need an ability to quantitatively evaluate and trade-off architecture
-to ensure quality of the solutions.
-
-https://assay.it is designed to perform a formal (objective) proofs of the quality using
-Behavior as a Code paradigm. It connects cause-and-effect (Given/When/Then) to the networking
-concepts (Input/Process/Output). The expected behavior of each network component is declared
-using simple Golang program.
-
-This repository delivers a minimal example about development of Behavior as a Code suites.
+[**https://assay.it**](https://assay.it) is a Software as a Service for developers to perform formal proofs of quality using type safe Behavior as a Code. It automates validation of cause-and-effect in loosely coupled topologies such as serverless applications, microservices and other systems that rely on interface syntaxes and its behaviors. It emphasizes deployment and quality assessment as a key feature along the development pipelines. Continuous proofs of the quality helps to eliminate defects at earlier phases of the feature lifecycle. It impacts on engineering teams philosophy and commitments, ensuring that your microservice(s) are always in a release-ready state.
 
 
 ## Getting Started
 
-You can fork this repo and play with it in own account... Let's have a look on the repository:
-* [suite.go](suite.go) implements a minimal quality assessment of the service.
-* [.assay.json](.assay.json) service configuration file, it declares what suites shall be executed.
 
-Are you ready to on-board with this example? 
+1. **Sign up for [assay.it](https://assay.it)** with your GitHub developer account. Initially, the service requires only access to your public profile, public repositories and access to commit status of connected repositories. Later, you can enable quality assessments of private repositories. 
+
+2. **Fork [assay-it/blueprint-suite](https://github.com/assay-it/blueprint-suite)** to your own GitHub account and then add to the assay.it workspace. The example implements a minimal quality assessment suite using [category pattern](https://assay.it/doc/core/category) to connect cause-and-effect (Given/When/Then) with the networking concepts (Input/Process/Output). Just write [pure functional code](https://assay.it/doc/core) instead of clicking through UI or maintaining endless XML, YAML or JSON documents.
+```go
+func TestOk() assay.Arrow {
+  return http.Join(
+    ø.GET("https://assay.it"),
+    ƒ.Code(http.StatusCodeOK),
+    ƒ.Header("Content-Type").Is("text/html"),
+  )
+}
+```
+
+3. **Launch the quality assessment** through the user interface. The service schedules the job and returns results of assessments in a few seconds. Here, a manual job trigger is used for ad-hoc and illustration purposes. [assay.it](https://assay.it) supports integration with CI/CD so that [continuous quality evaluation](https://assay.it/doc/case-study/everything-is-continuous) is a part of the development culture. 
+![](https://assay.it/doc/assets/images/screen.png)
 
 1. Sign Up to https://assay.it
 2. Fork the repository to your GitHub account
 3. Go To Account > Setting and Integrate your fork (sample.assay.it) with https://assay.it
 4. Run the interface assessment
 
+**Let's have a look on the content of repository**:
+* [suite.go](suite.go) implements a minimal quality assessment contract of the service.
+* [.assay.json](.assay.json) configuration file, it declares what suites shall be executed.
 
-## Next Steps
 
-1. Look into [advanced example](https://github.com/assay-it/example.assay.it). It shows more complex examples, talks about integration with CI\CD and depict the typical workflow.
+## Further Reading
 
-2. Study "Behavior as a Code" syntax defined by the [gurl library](https://github.com/fogfish/gurl).
+Please continue to [the core](https://assay.it/doc/core) sections for details about Behavior as a Code development and see [our advanced example on GitHub](https://github.com/assay-it/example.assay.it).
 
 ## Issues
 
